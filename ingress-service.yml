@@ -9,7 +9,17 @@ spec:
     rules:
         -http:
             paths:
-                -path:/
+                -path:/client.html
                  backend: 
-                    serviceName:client-server
+                    serviceName:client-service
                     servicePort: 3000
+                
+                -path:/server.html
+                 backend: 
+                    serviceName:server-service
+                    servicePort: 5000
+                    
+                -path:/worker.html
+                 backend: 
+                    serviceName:worker-service
+                    servicePort: 9000
